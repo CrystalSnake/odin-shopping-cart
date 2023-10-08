@@ -1,28 +1,34 @@
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
-import App from './App';
+import PropTypes from 'prop-types';
+import Home from './Home';
 import Catalog from './catalog';
 import Cart from './cart';
 import ErrorPage from './ErrorPage';
 
-const Router = () => {
+const Router = ({ cartItems, addToCart }) => {
   const router = createBrowserRouter([
     {
       path: '/',
-      element: <App />,
+      element: <Home />,
     },
     {
       path: '/catalog',
-      element: <Catalog />,
+      element: <Catalog addToCart={addToCart} />,
       errorElement: <ErrorPage />,
     },
     {
       path: '/cart',
-      element: <Cart />,
+      element: <Cart cartItems={cartItems} />,
       errorElement: <ErrorPage />,
     },
   ]);
 
   return <RouterProvider router={router} />;
+};
+
+Router.propTypes = {
+  cartItems: PropTypes.array.isRequired,
+  addToCart: PropTypes.func.isRequired,
 };
 
 export default Router;

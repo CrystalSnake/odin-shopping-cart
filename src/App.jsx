@@ -6,7 +6,19 @@ function App() {
   const [cartItems, setCartItems] = useState([]);
 
   const addToCart = (product) => {
-    setCartItems([...cartItems, product]);
+    const existingProductIndex = cartItems.findIndex(
+      (item) => item.id === product.id
+    );
+
+    if (existingProductIndex !== -1) {
+      const updatedCartItems = [...cartItems];
+      updatedCartItems[existingProductIndex].quantity =
+        Number(updatedCartItems[existingProductIndex].quantity) +
+        Number(product.quantity);
+      setCartItems(updatedCartItems);
+    } else {
+      setCartItems([...cartItems, product]);
+    }
   };
 
   const removeFromCart = (product) => {

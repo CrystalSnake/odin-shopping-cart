@@ -8,7 +8,7 @@ function Product({ product, addToCart }) {
 
   const handleAddToCart = () => {
     const cartItem = {
-      product,
+      ...product,
       quantity: productQuantity,
     };
     addToCart(cartItem);

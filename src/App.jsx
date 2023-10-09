@@ -9,7 +9,17 @@ function App() {
     setCartItems([...cartItems, product]);
   };
 
-  return <Router cartItems={cartItems} addToCart={addToCart} />;
+  const removeFromCart = (product) => {
+    setCartItems(cartItems.filter((item) => item != product));
+  };
+
+  return (
+    <Router
+      cartItems={cartItems}
+      addToCart={addToCart}
+      removeFromCart={removeFromCart}
+    />
+  );
 }
 
 export default App;

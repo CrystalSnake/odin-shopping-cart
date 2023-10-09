@@ -5,7 +5,7 @@ import Catalog from './catalog';
 import Cart from './cart';
 import ErrorPage from './ErrorPage';
 
-const Router = ({ cartItems, addToCart }) => {
+const Router = ({ cartItems, addToCart, removeFromCart }) => {
   const router = createBrowserRouter([
     {
       path: '/',
@@ -18,7 +18,7 @@ const Router = ({ cartItems, addToCart }) => {
     },
     {
       path: '/cart',
-      element: <Cart cartItems={cartItems} />,
+      element: <Cart cartItems={cartItems} removeFromCart={removeFromCart} />,
       errorElement: <ErrorPage />,
     },
   ]);
@@ -29,6 +29,7 @@ const Router = ({ cartItems, addToCart }) => {
 Router.propTypes = {
   cartItems: PropTypes.array.isRequired,
   addToCart: PropTypes.func.isRequired,
+  removeFromCart: PropTypes.func.isRequired,
 };
 
 export default Router;

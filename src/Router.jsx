@@ -1,9 +1,9 @@
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 import PropTypes from 'prop-types';
-import Home from './Home';
-import Catalog from './catalog';
-import Cart from './cart';
-import ErrorPage from './ErrorPage';
+import Home from './components/pages/Home';
+import Catalog from './components/pages/Catalog';
+import Cart from './components/pages/Cart';
+import ErrorPage from './components/pages/ErrorPage';
 
 const Router = ({ cartItems, addToCart, removeFromCart }) => {
   const router = createBrowserRouter([

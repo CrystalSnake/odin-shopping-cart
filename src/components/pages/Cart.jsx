@@ -1,12 +1,15 @@
+import { useState } from 'react';
 import PropTypes from 'prop-types';
-import Modal from './Modal';
-import Header from './header';
-import Footer from './footer';
-import { sumOfProducts, subtotalOfProducts } from './Utilities';
+import Modal from './modules/Modal';
+import Header from './modules/Header';
+import Footer from './modules/Footer';
+import { sumOfProducts, subtotalOfProducts } from '../other/Utilities';
 import styles from './Cart.module.css';
 
 function Cart({ cartItems, removeFromCart }) {
   const items = cartItems;
+
+  const [orderCheckout, setOrderCheckout] = useState(false);
 
   return (
     <>
@@ -33,11 +36,13 @@ function Cart({ cartItems, removeFromCart }) {
             </ul>
             <p>Items in cart: {sumOfProducts(items)}</p>
             <p>Subtotal: {subtotalOfProducts(items)}</p>
+            <button onClick={() => setOrderCheckout(true)}>Checkout</button>
           </>
         )}
       </div>
 
-      <Modal />
+      {orderCheckout && <Modal />}
+
       <Footer />
     </>
   );

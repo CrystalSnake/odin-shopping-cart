@@ -1,9 +1,9 @@
 import { useState, useEffect } from 'react';
 import PropTypes from 'prop-types';
 import Product from './Product';
-import Header from './header';
-import Footer from './footer';
-import fetchData from './Fetch';
+import Header from './modules/Header';
+import Footer from './modules/Footer';
+import fetchData from '../other/Fetch';
 
 function Catalog({ addToCart }) {
   const [products, setProducts] = useState([]);

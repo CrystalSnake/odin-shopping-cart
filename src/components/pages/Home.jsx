@@ -1,5 +1,5 @@
-import Header from './header';
-import Footer from './footer';
+import Header from './modules/Header';
+import Footer from './modules/Footer';
 
 function Home() {
   return (

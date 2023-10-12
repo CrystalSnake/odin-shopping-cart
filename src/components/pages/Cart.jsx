@@ -3,13 +3,20 @@ import PropTypes from 'prop-types';
 import Modal from './modules/Modal';
 import Header from './modules/Header';
 import Footer from './modules/Footer';
+import Form from './modules/Form';
 import { sumOfProducts, subtotalOfProducts } from '../other/Utilities';
 import styles from './Cart.module.css';
 
-function Cart({ cartItems, removeFromCart }) {
+function Cart({ cartItems, removeFromCart, clearCart }) {
   const items = cartItems;
 
   const [orderCheckout, setOrderCheckout] = useState(false);
+  const [orderSubmit, setOrderSubmit] = useState(false);
+
+  const submitOrder = () => {
+    setOrderSubmit(true);
+    clearCart();
+  };
 
   return (
     <>
@@ -36,12 +43,21 @@ function Cart({ cartItems, removeFromCart }) {
             </ul>
             <p>Items in cart: {sumOfProducts(items)}</p>
             <p>Subtotal: {subtotalOfProducts(items)}</p>
+            <button onClick={clearCart}>Clear Cart</button>
             <button onClick={() => setOrderCheckout(true)}>Checkout</button>
           </>
         )}
       </div>
 
-      {orderCheckout && <Modal />}
+      {orderCheckout && (
+        <Modal>
+          {orderSubmit ? (
+            <p>Your order successful</p>
+          ) : (
+            <Form submitOrder={submitOrder} />
+          )}
+        </Modal>
+      )}
 
       <Footer />
     </>
@@ -51,6 +67,7 @@ function Cart({ cartItems, removeFromCart }) {
 Cart.propTypes = {
   cartItems: PropTypes.array.isRequired,
   removeFromCart: PropTypes.func.isRequired,
+  clearCart: PropTypes.func.isRequired,
 };
 
 export default Cart;

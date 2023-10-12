@@ -25,11 +25,16 @@ function App() {
     setCartItems(cartItems.filter((item) => item != product));
   };
 
+  const clearCart = () => {
+    setCartItems([]);
+  };
+
   return (
     <Router
       cartItems={cartItems}
       addToCart={addToCart}
       removeFromCart={removeFromCart}
+      clearCart={clearCart}
     />
   );
 }

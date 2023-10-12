@@ -1,9 +1,11 @@
-function Modal() {
-  return (
-    <>
-      <p>Your order is successful!</p>
-    </>
-  );
+import PropTypes from 'prop-types';
+
+function Modal({ children }) {
+  return <>{children}</>;
 }
+
+Modal.propTypes = {
+  children: PropTypes.element,
+};
 
 export default Modal;

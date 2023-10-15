@@ -1,12 +1,17 @@
+import PropTypes from 'prop-types';
 import Navigation from './navigation';
 
-function Header() {
+function Header({ cartItems }) {
   return (
     <>
       <h1>The best shop!</h1>
-      <Navigation />
+      <Navigation cartItems={cartItems} />
     </>
   );
 }
+
+Header.propTypes = {
+  cartItems: PropTypes.array.isRequired,
+};
 
 export default Header;

@@ -1,6 +1,8 @@
+import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
+import { sumOfProducts } from '../../other/Utilities';
 
-function Navigation() {
+function Navigation({ cartItems }) {
   return (
     <>
       <ul>
@@ -11,11 +13,18 @@ function Navigation() {
           <Link to="/catalog">Catalog</Link>
         </li>
         <li>
-          <Link to="/cart">Cart</Link>
+          <Link to="/cart">
+            Cart
+            {cartItems.length != 0 ? '(' + sumOfProducts(cartItems) + ')' : ''}
+          </Link>
         </li>
       </ul>
     </>
   );
 }
+
+Navigation.propTypes = {
+  cartItems: PropTypes.array.isRequired,
+};
 
 export default Navigation;

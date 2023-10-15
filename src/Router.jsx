@@ -9,11 +9,11 @@ const Router = ({ cartItems, addToCart, removeFromCart, clearCart }) => {
   const router = createBrowserRouter([
     {
       path: '/',
-      element: <Home />,
+      element: <Home cartItems={cartItems} />,
     },
     {
       path: '/catalog',
-      element: <Catalog addToCart={addToCart} />,
+      element: <Catalog addToCart={addToCart} cartItems={cartItems} />,
       errorElement: <ErrorPage />,
     },
     {

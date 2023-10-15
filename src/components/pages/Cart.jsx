@@ -20,7 +20,7 @@ function Cart({ cartItems, removeFromCart, clearCart }) {
 
   return (
     <>
-      <Header />
+      <Header cartItems={cartItems} />
       <div>
         {items.length === 0 ? (
           <p>Your shopping cart is empty.</p>

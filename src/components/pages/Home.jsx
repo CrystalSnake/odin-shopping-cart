@@ -1,10 +1,11 @@
+import PropTypes from 'prop-types';
 import Header from './modules/Header';
 import Footer from './modules/Footer';
 
-function Home() {
+function Home({ cartItems }) {
   return (
     <>
-      <Header />
+      <Header cartItems={cartItems} />
       <div>
         <p>
           Lorem ipsum dolor sit, amet consectetur adipisicing elit. Et enim
@@ -28,5 +29,9 @@ function Home() {
     </>
   );
 }
+
+Home.propTypes = {
+  cartItems: PropTypes.array.isRequired,
+};
 
 export default Home;

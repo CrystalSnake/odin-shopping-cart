@@ -1,12 +1,15 @@
 import PropTypes from 'prop-types';
 import Navigation from './navigation';
+import styles from './Header.module.css';
 
 function Header({ cartItems }) {
   return (
-    <>
-      <h1>The best shop!</h1>
+    <header className={styles.header}>
+      <div className="logo">
+        <a href="#">GG</a>
+      </div>
       <Navigation cartItems={cartItems} />
-    </>
+    </header>
   );
 }
 

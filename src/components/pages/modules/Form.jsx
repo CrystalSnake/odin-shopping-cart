@@ -9,9 +9,20 @@ function Form({ submitOrder }) {
   return (
     <>
       <form action="" onSubmit={submitForm}>
-        <input type="text" name="name" id="name" />
-        <label htmlFor="name"></label>
-        <button type="submit">Submit</button>
+        <div>
+          <label htmlFor="name">Name</label>
+          <input type="text" name="name" id="name" required />
+        </div>
+        <div>
+          <label htmlFor="address">Address</label>
+          <input type="text" name="address" id="address" required />
+        </div>
+        <div>
+          <label htmlFor="phone">Phone</label>
+          <input type="tel" name="phone" id="phone" required />
+        </div>
+        <p>All fields are required.</p>
+        <button type="submit">Submit and Pay</button>
       </form>
     </>
   );

@@ -1,6 +1,61 @@
+@font-face {
+  font-family: RussoOne;
+  src: url('/assets/RussoOne-Regular.ttf') format('ttf');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: Rubik;
+  src: url('/assets/Rubik-Regular.ttf') format('ttf');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
 #root {
   max-width: 1280px;
   margin: 0 auto;
-  padding: 2rem;
+  padding: 0;
   text-align: center;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+}
+
+body {
+  background: #18142e;
+  color: #bcb3d7;
+  font-size: 18px;
+  font-family: Rubik, sans-serif;
+  height: 100vh;
+  margin: 0 15px;
+}
+
+a {
+  color: #796daf;
+  text-decoration: none;
+}
+
+ul {
+  list-style-type: none;
+}
+
+button {
+  padding: 10px 20px;
+  border-radius: 10px;
+  font-size: 16px;
+  font-family: Rubik, sans-serif;
+}
+
+.logo {
+  font-size: 30px;
+  font-family: RussoOne, sans-serif;
+  border: #bcb3d7 3px solid;
+  border-bottom: #bcb3d7 10px solid;
+  width: 70px;
+  padding: 10px;
 }

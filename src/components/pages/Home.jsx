@@ -7,24 +7,29 @@ function Home({ cartItems }) {
     <>
       <Header cartItems={cartItems} />
       <div>
+        <h1>
+          Welcome to Gadget Galaxy - your gateway to the world of cutting-edge
+          gadgets and electronics!
+        </h1>
         <p>
-          Lorem ipsum dolor sit, amet consectetur adipisicing elit. Et enim
-          alias a odio ratione suscipit molestiae veniam sequi ex, vero
-          laudantium, sunt eaque dicta voluptate nostrum qui accusantium amet
-          commodi.
+          Here you will find the latest computer components that will help you
+          build the perfect system.
         </p>
         <p>
-          Lorem ipsum, dolor sit amet consectetur adipisicing elit. Optio
-          tempora dolor ex excepturi voluptas totam suscipit facilis nobis
-          impedit quia.
+          We take pride in offering high-quality products that will enhance the
+          power and performance of your computer. Whether you need any
+          components, Gadget Galaxy offers the best options at competitive
+          prices.
         </p>
         <p>
-          Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quo nesciunt
-          sit facilis, amet nobis tempore praesentium aspernatur minima fuga.
-          Quo, debitis animi eum quia, harum beatae distinctio at laborum quae,
-          officiis adipisci cumque nemo! Et libero dolorum ex neque ducimus!
+          Our experts are always ready to assist you in selecting and purchasing
+          the perfect components for your needs.
         </p>
+        <button>
+          <a href="/catalog">Shop now</a>
+        </button>
       </div>
+
       <Footer />
     </>
   );
